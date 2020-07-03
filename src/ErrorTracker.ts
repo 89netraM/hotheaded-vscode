@@ -1,19 +1,21 @@
-import { DiagnosticChangeEvent, Uri, Diagnostic, window, languages, DiagnosticSeverity } from "vscode";
+import { DiagnosticChangeEvent, Uri, Diagnostic, window, languages, DiagnosticSeverity, TextEditor } from "vscode";
 
 export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
-	const errors = errorsForActiveFile(e.uris);
+	if (window.activeTextEditor !== undefined) {
+		const errors = errorsForActiveFile(window.activeTextEditor, e.uris);
 
-	if (errors.length > 0) {
-		console.log(errors);
-	}
-	else {
-		console.log("No errors");
+		if (errors.length > 0) {
+			console.log(errors);
+		}
+		else {
+			console.log("No errors");
+		}
 	}
 }
 
-function errorsForActiveFile(errorUris: ReadonlyArray<Uri>): Array<Diagnostic> {
-	if (window.activeTextEditor !== undefined && errorUris.includes(window.activeTextEditor.document.uri)) {
-		return errorsForFile(window.activeTextEditor.document.uri);
+function errorsForActiveFile(editor: TextEditor, errorUris: ReadonlyArray<Uri>): Array<Diagnostic> {
+	if (errorUris.includes(editor.document.uri)) {
+		return errorsForFile(editor.document.uri);
 	}
 	else {
 		return new Array<Diagnostic>();
