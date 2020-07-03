@@ -16,9 +16,20 @@ const bashes: ReadonlyArray<string> = new Array<string>(
 	"What is that.wav",
 	"WTF.wav"
 );
+const takenBashes: Array<string> = new Array<string>();
 
 function randomMessage(): string {
-	return bashes[Math.floor(Math.random() * bashes.length)];
+	let bash;
+	do {
+		bash = bashes[Math.floor(Math.random() * bashes.length)];
+	} while (takenBashes.includes(bash));
+
+	takenBashes.push(bash);
+	if (takenBashes.length > Math.round(bashes.length * 0.4)) {
+		takenBashes.shift();
+	}
+
+	return bash;
 }
 function randomFile(): string {
 	return path.join(assetsPath, randomMessage());
