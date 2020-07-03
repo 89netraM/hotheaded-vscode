@@ -65,5 +65,5 @@ function clearPreviousError(): void {
 	previousError = null;
 }
 function sameAsPrevious(error: Diagnostic): boolean {
-	return previousError?.code === error.code;
+	return previousError?.code === error.code && previousError?.range.end.line === error.range.end.line;
 }
