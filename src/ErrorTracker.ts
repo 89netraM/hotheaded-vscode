@@ -1,4 +1,5 @@
 import { DiagnosticChangeEvent, Uri, Diagnostic, window, languages, DiagnosticSeverity, Range, TextDocument, Position, TextEditor } from "vscode";
+import { bash } from "./Basher";
 
 export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
 	if (window.activeTextEditor !== undefined) {
@@ -6,6 +7,7 @@ export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
 
 		if (errors.length > 0) {
 			console.log(errors);
+			bash();
 		}
 		else {
 			console.log("No errors");
