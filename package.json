@@ -22,5 +22,8 @@
 		"@types/vscode": "^1.46.0",
 		"@types/node": "^13.11.0",
 		"typescript": "^3.8.3"
+	},
+	"dependencies": {
+		"speaker": "^0.5.1"
 	}
 }
