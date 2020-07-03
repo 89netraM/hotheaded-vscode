@@ -10,17 +10,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:hotheaded-vscode.helloWorld"
+		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "hotheaded-vscode.helloWorld",
-				"title": "Hello World"
-			}
-		]
-	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
