@@ -1,7 +1,8 @@
-import { ExtensionContext } from "vscode";
+import { ExtensionContext, languages } from "vscode";
+import { OnDidChangeDiagnostics } from "./ErrorTracker";
 
 export function activate(context: ExtensionContext) {
-	console.log("Congratulations, your extension \"hotheaded-vscode\" is now active!");
+	languages.onDidChangeDiagnostics(OnDidChangeDiagnostics, null, context.subscriptions);
 }
 
 export function deactivate() {}
