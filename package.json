@@ -1,0 +1,34 @@
+{
+	"name": "hotheaded-vscode",
+	"displayName": "Hotheaded VS Code",
+	"description": "Are red squiggly lines not enough? Do you wish for more of a kick when you make an error? Have VS Code scream at you whenever you type something that isn't correct.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.46.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:hotheaded-vscode.helloWorld"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "hotheaded-vscode.helloWorld",
+				"title": "Hello World"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.46.0",
+		"@types/node": "^13.11.0",
+		"typescript": "^3.8.3"
+	}
+}
