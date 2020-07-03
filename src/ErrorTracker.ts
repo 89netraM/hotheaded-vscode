@@ -2,15 +2,19 @@ import { DiagnosticChangeEvent, Uri, Diagnostic, window, languages, DiagnosticSe
 import { bash } from "./Basher";
 
 export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
-	if (window.activeTextEditor !== undefined) {
+	if (window.activeTextEditor !== undefined && e.uris.includes(window.activeTextEditor.document.uri)) {
 		const errors = errorsForActiveFile(window.activeTextEditor, e.uris);
 
 		if (errors.length > 0) {
-			console.log(errors);
-			bash();
+			if (errors.filter(d => !sameAsPrevious(d)).length > 0) {
+				console.log(errors);
+				bash();
+				setPreviousError(errors[0]);
+			}
 		}
 		else {
 			console.log("No errors");
+			clearPreviousError();
 		}
 	}
 }
@@ -51,4 +55,15 @@ function textBetween(document: TextDocument, cursor: Position, error: Range): st
 function isErrorCurrent(editor: TextEditor, error: Diagnostic): boolean {
 	const between = textBetween(editor.document, editor.selection.active, error.range);
 	return /^\s*$/.test(between);
+}
+
+let previousError: Diagnostic | null = null;
+function setPreviousError(error: Diagnostic): void {
+	previousError = error;
+}
+function clearPreviousError(): void {
+	previousError = null;
+}
+function sameAsPrevious(error: Diagnostic): boolean {
+	return previousError?.code === error.code;
 }
