@@ -1,6 +1,5 @@
-import * as Speaker from "speaker";
 import * as path from "path";
-import * as fs from "fs";
+import { addToPlayQueue } from "./Player";
 
 let assetsPath: string;
 export function initBashing(extensionPath: string): void {
@@ -36,11 +35,5 @@ function randomFile(): string {
 }
 
 export function bash(): void {
-	const speaker = new Speaker({
-		channels: 2,
-		bitDepth: 16,
-		sampleRate: 44100
-	});
-
-	fs.createReadStream(randomFile()).pipe(speaker);
+	addToPlayQueue(randomFile());
 }
