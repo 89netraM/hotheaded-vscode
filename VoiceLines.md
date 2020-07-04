@@ -31,4 +31,14 @@
 
 ## Attempt at weeb-speak
 
-* "Compiler-san told me you only feed her shit"
+* "You think this will compile? baka!"
+* "eeeeeh?"
+* "Hmph, this is not at all acceptable"
+* "baka!"
+* "ugh, your useless"
+* "eww, your code stinks"
+* "Should have expected as mutch from you"
+* "Do you seriously expect me to compile this?"
+* "Hihihi, you call that a program"
+* "you idiot, of course that wouldn't work"
+* "Hmph, your code is trash and so are you"
