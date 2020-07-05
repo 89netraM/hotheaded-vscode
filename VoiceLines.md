@@ -6,8 +6,8 @@
 * "That's not right!"
 * "What are you writing?"
 * "What is *that*?"
-* "WTF?"
-   pronounce each word
+* "WTF?"  
+  Pronounce each word
 * "You should just give up"
 * "Why even try?"
 * "When are you gonna give up?"
@@ -31,17 +31,18 @@
 * "Have you even *read* the documentation?"
 * "Ok, *now* you're just wasting my time"
 * "You know, programming isn't for everyone..."
-* "R.T.F.M" (Accronym for "Read the fucking manual")
+* "R.T.F.M."  
+  Acronym for "Read the fucking manual"
 * "Here's a suggestion, stop doing that!"
 * "It's called syntax, idiot"
-* "Go ahead, run it. See what happens"
-* "Now this is just sad.."
-* "Well, at least your consisten in being bad"
-* "you idiot, of course that wouldn't work"
+* "Go ahead, run it. See what happens."
+* "Now this is just sad..."
+* "Well, at least your consistent in being bad"
+* "You idiot, of course that wouldn't work"
 * "Hmph, this is not at all acceptable"
-* "ugh, your useless"
-* "eww, your code stinks"
-* "Should have expected as mutch from you"
+* "Ugh, your useless"
+* "Eww, your code stinks"
+* "Should have expected as much from you"
 * "Do you seriously expect me to compile this?"
 * "Hmph, your code is trash and so are you"
 * "Pathetic"
@@ -50,6 +51,6 @@
 
 ## Attempt at weeb-speak
 
-* "You think this will compile? baka!"
-* "eeeeeh?"
-* "baka!"
+* "You think this will compile? Baka!"
+* "Eeeeeh?"
+* "Baka!"
