@@ -7,7 +7,7 @@
 * "What are you writing?"
 * "What is *that*?"
 * "WTF"
-   Pronunce each word
+   pronounce each word
 * "You should just give up"
 * "Why even try?"
 * "When are you gonna give up?"
