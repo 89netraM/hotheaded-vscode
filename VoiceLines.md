@@ -25,6 +25,7 @@
 * "No wonder you're not loved"
 * "I can't wait for you to be gone"
 * "They should just fire you!"
+* "That's some bullshit right there!"
 * "That's the worst code I've ever seen!"
 * "I can't stand more of this! Just uninstall me!"
 * "Have you even *read* the documentation?"
