@@ -7,7 +7,7 @@
 * "What are you writing?"
 * "What is *that*?"
 * "WTF"
-   Pronunce each word
+   pronounce each word
 * "You should just give up"
 * "Why even try?"
 * "When are you gonna give up?"
@@ -28,7 +28,7 @@
 * "That's the worst code I've ever seen!"
 * "I can't stand more of this! Just uninstall me!"
 * "Have you even *read* the documentation?"
-* "Ok, *now* your'e just wasting my time"
+* "Ok, *now* you're just wasting my time"
 * "You know, programming isn't for everyone..."
 * "R.T.F.M" (Accronym for "Read the fucking manual")
 * "Here's a suggestion, stop doing that!"
