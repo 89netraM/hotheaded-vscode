@@ -35,7 +35,7 @@
 * "Here's a suggestion, stop doing that!"
 * "It's called syntax, idiot"
 * "Go ahead, run it. See what happens"
-* "Now, this is just sad.."
+* "Now this is just sad.."
 * "Well, at least your consisten in being bad"
 * "you idiot, of course that wouldn't work"
 * "Hmph, this is not at all acceptable"
