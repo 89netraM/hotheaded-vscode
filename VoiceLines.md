@@ -11,6 +11,7 @@
 * "You should just give up"
 * "Why even try?"
 * "When are you gonna give up?"
+* "The fuck you doing!"
 * "I'm not angry, I'm just disappointed..."
 * "You're such a disappointment!"
 * "You know, I could go for some spaghetti right now"  
