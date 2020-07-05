@@ -6,6 +6,8 @@
 * "That's not right!"
 * "What are you writing?"
 * "What is *that*?"
+* "WTF"
+   Pronunce each word
 * "You should just give up"
 * "Why even try?"
 * "When are you gonna give up?"
