@@ -1,13 +1,14 @@
 {
 	"name": "hotheaded-vscode",
 	"displayName": "Hotheaded VS Code",
+	"publisher": "89netraM",
 	"description": "Are red squiggly lines not enough? Do you wish for more of a kick when you make an error? Have VS Code scream at you whenever you type something that isn't correct.",
 	"icon": "assets/icon.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/89netraM/hotheaded-vscode.git"
 	},
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
