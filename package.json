@@ -8,12 +8,16 @@
 		"type": "git",
 		"url": "https://github.com/89netraM/hotheaded-vscode.git"
 	},
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
 	"categories": [
 		"Other"
+	],
+	"keywords": [
+		"meme",
+		"anime"
 	],
 	"activationEvents": [
 		"onStartupFinished"
