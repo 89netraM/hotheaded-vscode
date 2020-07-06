@@ -8,11 +8,8 @@ Have VS Code scream at you whenever you type something that isn't correct.
 
 * ☠ Makes me want to die
 * 😱 VS Code literally screams at you the second something's wrong
-
-## To Do
-
-* 💬 It does scream now, but it's in my voice. Should probably get a better
-  voice actor.
+* 💬 Awesome voice lines by [Dalfaria](https://twitter.com/Dalfairy)
+  from [fiverr](https://www.fiverr.com/dalfaria)
 
 ## Bugs
 
