@@ -4,6 +4,11 @@ Are red squiggly lines not enough?
 Do you wish for more of a kick when you make an error?  
 Have VS Code scream at you whenever you type something that isn't correct.
 
+## Background
+
+[![Inspiring Tweet](./assets/inspiring-tweet.png)](https://twitter.com/WtFawwk/status/1270021848542011393)  
+The tweet that inspired me to create this abomination
+
 ## Features
 
 * ☠ Makes me want to die
