@@ -1,20 +1,23 @@
 import * as path from "path";
+import * as glob from "glob";
 import { addToPlayQueue } from "./Player";
+import { workspace } from "vscode";
 
-let assetsPath: string;
+let bashes: ReadonlyArray<string>;
 export function initBashing(extensionPath: string): void {
-	assetsPath = path.join(extensionPath, "assets");
+	let globPattern = workspace.getConfiguration("hotheadedVSCode").get<string>("voiceLineGlob");
+	if (globPattern == null) {
+		globPattern = path.join(extensionPath, "assets/**/*.wav");
+	}
+
+	glob(
+		globPattern,
+		(error, matches) => {
+			bashes = matches;
+		}
+	);
 }
 
-const bashes: ReadonlyArray<string> = new Array<string>(
-	"Are you dumb.wav",
-	"That's never gonna work.wav",
-	"That's not even real code.wav",
-	"That's not right.wav",
-	"What are you writing.wav",
-	"What is that.wav",
-	"WTF.wav"
-);
 const takenBashes: Array<string> = new Array<string>();
 
 function randomMessage(): string {
@@ -31,7 +34,7 @@ function randomMessage(): string {
 	return bash;
 }
 function randomFile(): string {
-	return path.join(assetsPath, randomMessage());
+	return randomMessage();
 }
 
 export function bash(): void {

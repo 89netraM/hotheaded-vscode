@@ -17,6 +17,18 @@
 	"activationEvents": [
 		"onStartupFinished"
 	],
+	"contributes": {
+		"configuration": {
+			"title": "Hotheaded VS Code",
+			"properties": {
+				"hotheadedVSCode.voiceLineGlob": {
+					"type": "string",
+					"default": null,
+					"markdownDescription": "A glob targeting some uncompressed sounds files (`.wav` etc.). Leave blank for built-in voice lines.  \nRestart required."
+				}
+			}
+		}
+	},
 	"main": "./out/extension.js",
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -24,11 +36,13 @@
 		"watch": "tsc -watch -p ./"
 	},
 	"devDependencies": {
+		"@types/glob": "^7.1.2",
 		"@types/vscode": "^1.46.0",
 		"@types/node": "^13.11.0",
 		"typescript": "^3.8.3"
 	},
 	"dependencies": {
+		"glob": "^7.1.6",
 		"speaker": "^0.5.1"
 	}
 }
