@@ -42,9 +42,10 @@
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.2",
-		"@types/vscode": "^1.46.0",
 		"@types/node": "^13.11.0",
-		"typescript": "^3.8.3"
+		"@types/vscode": "^1.46.0",
+		"typescript": "^3.8.3",
+		"vsce": "^1.77.0"
 	},
 	"dependencies": {
 		"glob": "^7.1.6",
