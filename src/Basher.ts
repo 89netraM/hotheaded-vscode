@@ -6,7 +6,7 @@ import { workspace } from "vscode";
 let bashes: ReadonlyArray<string>;
 export function initBashing(extensionPath: string): void {
 	let globPattern = workspace.getConfiguration("hotheadedVSCode").get<string>("voiceLineGlob");
-	if (globPattern == null) {
+	if (globPattern == null || globPattern.length === 0) {
 		globPattern = path.join(extensionPath, "assets/**/*.wav");
 	}
 
