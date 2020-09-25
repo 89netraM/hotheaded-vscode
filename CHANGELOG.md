@@ -1,3 +1,9 @@
+## 1.1.1
+
+* Updated some used node modules.
+* Updated the CONTRIBUTING instructions because `node-speaker`s definition file
+  is correct now.
+
 ## 1.1.0
 
 * Whoops, the settings made it so that the extension couldn't find the voice

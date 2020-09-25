@@ -1,4 +1,4 @@
-# How to contribute<br/><span style="font-size: 0.4em">Actually, how to build the project</span>
+# How to contribute<br/><small>Actually, how to build the project</small>
 
 ## Preparations
 
@@ -6,8 +6,7 @@
 2. Run `npm install` in this project.
 3. Edit the deceleration file for the `node-speaker` package to actually work.
 	1. Open [`node_modules/speaker/index.d.ts`](node_modules/speaker/index.d.ts).
-	2. Write `declare` in front of the namespace and class.
-	3. On the last line, change `export`**`s`** to `export`.
+	2. Write `declare ` in front of the namespace and class.
 
 ## Building, Packaging, and Installing
 
