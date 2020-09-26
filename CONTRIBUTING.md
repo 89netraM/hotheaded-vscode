@@ -2,9 +2,10 @@
 
 ## Preparations
 
-1. Have Node.JS and `npm` installed.
-2. Run `npm install` in this project.
-3. Edit the deceleration file for the `node-speaker` package to actually work.
+1. If you're running Ubuntu (or Debian) you'll need to install [ALSA](https://www.alsa-project.org/wiki/Main_Page) first, do so with: sudo apt-get install libasound2-dev.
+2. Have Node.JS and `npm` installed.
+3. Run `npm install` in this project.
+4. Edit the deceleration file for the `node-speaker` package to actually work.
 	1. Open [`node_modules/speaker/index.d.ts`](node_modules/speaker/index.d.ts).
 	2. Write `declare ` in front of the namespace and class.
 
