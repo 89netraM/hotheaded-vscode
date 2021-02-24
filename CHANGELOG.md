@@ -1,3 +1,7 @@
+## 1.1.2
+
+* No works with WSL/remote workspaces thanks to [bilgorajskim](https://github.com/bilgorajskim)!
+
 ## 1.1.1
 
 * Updated some used node modules.
