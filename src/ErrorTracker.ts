@@ -2,29 +2,21 @@ import { DiagnosticChangeEvent, Uri, Diagnostic, window, languages, DiagnosticSe
 import { bash } from "./Basher";
 
 export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
-	if (window.activeTextEditor !== undefined && e.uris.includes(window.activeTextEditor.document.uri)) {
-		const errors = errorsForActiveFile(window.activeTextEditor, e.uris);
-
+	const activeTextEditor = window.activeTextEditor;
+	if (
+		activeTextEditor && e.uris.find(uri => uri.path === activeTextEditor.document.uri.path)
+	) {
+		const errors = errorsForFile(activeTextEditor, activeTextEditor.document.uri);
 		if (errors.length > 0) {
-			if (errors.filter(d => !sameAsPrevious(d)).length > 0) {
+			if (errors.filter((d) => !sameAsPrevious(d)).length > 0) {
 				console.log(errors);
 				bash();
 				setPreviousError(errors[0]);
 			}
-		}
-		else {
+		} else {
 			console.log("No errors");
 			clearPreviousError();
 		}
-	}
-}
-
-function errorsForActiveFile(editor: TextEditor, errorUris: ReadonlyArray<Uri>): Array<Diagnostic> {
-	if (errorUris.includes(editor.document.uri)) {
-		return errorsForFile(editor, editor.document.uri);
-	}
-	else {
-		return new Array<Diagnostic>();
 	}
 }
 function errorsForFile(editor: TextEditor, fileUri: Uri): Array<Diagnostic> {
