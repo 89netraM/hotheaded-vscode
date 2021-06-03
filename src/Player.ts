@@ -11,8 +11,9 @@ function play(file: string): void {
 		channels: 2,
 		bitDepth: 16,
 		sampleRate: 44100,
-		final: donePlaying
+		emitClose: true,
 	});
+	speaker.addListener("close", donePlaying);
 	fs.createReadStream(file).pipe(speaker);
 }
 function donePlaying(): void {
