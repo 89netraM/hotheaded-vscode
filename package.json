@@ -43,6 +43,11 @@
 					"type": "number",
 					"default": 0,
 					"description": "Maximum cooldown duration in milliseconds."
+        },
+				"hotheadedVSCode.voiceVolume": {
+					"type": "number",
+					"default": 1,
+					"description": "Volume level for voice playback (0.0 - 1.5)."
 				}
 			}
 		}
@@ -56,12 +61,14 @@
 	"devDependencies": {
 		"@types/glob": "^7.1.3",
 		"@types/node": "^13.13.21",
+		"@types/pcm-volume": "^1.0.0",
 		"@types/vscode": "^1.46.0",
 		"typescript": "^3.9.7",
 		"vsce": "^1.79.5"
 	},
 	"dependencies": {
 		"glob": "^7.1.6",
+		"pcm-volume": "^1.0.0",
 		"speaker": "^0.5.2"
 	}
 }
