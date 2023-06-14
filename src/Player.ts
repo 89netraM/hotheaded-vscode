@@ -1,5 +1,7 @@
+import { workspace } from "vscode";
 import * as Speaker from "speaker";
 import * as fs from "fs";
+import Volume = require("pcm-volume");
 
 const playQueue: Array<string> = new Array<string>();
 let isPlaying: boolean = false;
@@ -13,7 +15,14 @@ function play(file: string): void {
 		sampleRate: 44100,
 		final: donePlaying
 	});
-	fs.createReadStream(file).pipe(speaker);
+	const v = new Volume();
+  const voiceVolume = workspace
+    .getConfiguration("hotheadedVSCode")
+    .get<number>("voiceVolume") as number;
+  v.setVolume(voiceVolume);
+
+  v.pipe(speaker);
+  fs.createReadStream(file).pipe(v);
 }
 function donePlaying(): void {
 	isPlaying = false;
