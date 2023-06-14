@@ -16,13 +16,13 @@ function play(file: string): void {
 		final: donePlaying
 	});
 	const v = new Volume();
-  const voiceVolume = workspace
-    .getConfiguration("hotheadedVSCode")
-    .get<number>("voiceVolume") as number;
-  v.setVolume(voiceVolume);
+	const voiceVolume = workspace
+		.getConfiguration("hotheadedVSCode")
+		.get<number>("voiceVolume") as number;
+	v.setVolume(voiceVolume);
 
-  v.pipe(speaker);
-  fs.createReadStream(file).pipe(v);
+	v.pipe(speaker);
+	fs.createReadStream(file).pipe(v);
 }
 function donePlaying(): void {
 	isPlaying = false;
