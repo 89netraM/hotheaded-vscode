@@ -43,7 +43,7 @@
 					"type": "number",
 					"default": 0,
 					"description": "Maximum cooldown duration in milliseconds."
-        },
+				},
 				"hotheadedVSCode.voiceVolume": {
 					"type": "number",
 					"default": 1,
