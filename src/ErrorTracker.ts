@@ -1,6 +1,7 @@
-import { DiagnosticChangeEvent, Uri, Diagnostic, window, languages, DiagnosticSeverity, Range, TextDocument, Position, TextEditor } from "vscode";
+import { DiagnosticChangeEvent, Uri, Diagnostic, window, workspace, languages, DiagnosticSeverity, Range, TextDocument, Position, TextEditor } from "vscode";
 import { bash } from "./Basher";
 
+let cooldownTimer: NodeJS.Timeout | null = null;
 export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
 	const activeTextEditor = window.activeTextEditor;
 	if (
@@ -9,15 +10,35 @@ export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
 		const errors = errorsForFile(activeTextEditor, activeTextEditor.document.uri);
 		if (errors.length > 0) {
 			if (errors.filter((d) => !sameAsPrevious(d)).length > 0) {
-				console.log(errors);
-				bash();
-				setPreviousError(errors[0]);
+				console.log("Error: ", errors);
+				if (cooldownTimer === null) {
+					bash();
+					setPreviousError(errors[0]);
+					const cooldownDuration = getRandomCooldownDuration();
+					console.log(cooldownDuration);
+					cooldownTimer = setTimeout(() => {
+						cooldownTimer = null;
+					}, cooldownDuration);
+				}
 			}
 		} else {
 			console.log("No errors");
 			clearPreviousError();
 		}
 	}
+}
+function getRandomCooldownDuration(): number {
+	const minDuration = workspace
+		.getConfiguration("hotheadedVSCode")
+		.get<number>("cooldownDurationMin") as number;
+	const maxDuration = workspace
+		.getConfiguration("hotheadedVSCode")
+		.get<number>("cooldownDurationMax") as number;
+
+	const randomDuration = Math.floor(
+		Math.random() * (maxDuration - minDuration + 1) + minDuration
+	);
+	return randomDuration;
 }
 function errorsForFile(editor: TextEditor, fileUri: Uri): Array<Diagnostic> {
 	return languages
