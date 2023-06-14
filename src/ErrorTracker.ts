@@ -11,15 +11,15 @@ export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
 		if (errors.length > 0) {
 			if (errors.filter((d) => !sameAsPrevious(d)).length > 0) {
 				console.log("Error: ", errors);
-        if (cooldownTimer === null) {
-          bash();
-          setPreviousError(errors[0]);
-          const cooldownDuration = getRandomCooldownDuration();
-          console.log(cooldownDuration);
-          cooldownTimer = setTimeout(() => {
-            cooldownTimer = null;
-          }, cooldownDuration);
-        }
+				if (cooldownTimer === null) {
+					bash();
+					setPreviousError(errors[0]);
+					const cooldownDuration = getRandomCooldownDuration();
+					console.log(cooldownDuration);
+					cooldownTimer = setTimeout(() => {
+						cooldownTimer = null;
+					}, cooldownDuration);
+				}
 			}
 		} else {
 			console.log("No errors");
@@ -28,17 +28,17 @@ export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
 	}
 }
 function getRandomCooldownDuration(): number {
-  const minDuration = workspace
-    .getConfiguration("hotheadedVSCode")
-    .get<number>("cooldownDurationMin") as number;
-  const maxDuration = workspace
-    .getConfiguration("hotheadedVSCode")
-    .get<number>("cooldownDurationMax") as number;
+	const minDuration = workspace
+		.getConfiguration("hotheadedVSCode")
+		.get<number>("cooldownDurationMin") as number;
+	const maxDuration = workspace
+		.getConfiguration("hotheadedVSCode")
+		.get<number>("cooldownDurationMax") as number;
 
-  const randomDuration = Math.floor(
-    Math.random() * (maxDuration - minDuration + 1) + minDuration
-  );
-  return randomDuration;
+	const randomDuration = Math.floor(
+		Math.random() * (maxDuration - minDuration + 1) + minDuration
+	);
+	return randomDuration;
 }
 function errorsForFile(editor: TextEditor, fileUri: Uri): Array<Diagnostic> {
 	return languages
