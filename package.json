@@ -36,12 +36,12 @@
 				},
 				"hotheadedVSCode.cooldownDurationMin": {
           "type": "number",
-          "default": 5000,
+          "default": 0,
           "description": "Minimum cooldown duration in milliseconds."
         },
         "hotheadedVSCode.cooldownDurationMax": {
           "type": "number",
-          "default": 10000,
+          "default": 0,
           "description": "Maximum cooldown duration in milliseconds."
         }
 			}
