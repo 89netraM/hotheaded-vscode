@@ -2,7 +2,6 @@ import { DiagnosticChangeEvent, Uri, Diagnostic, window, workspace, languages, D
 import { bash } from "./Basher";
 
 let cooldownTimer: NodeJS.Timeout | null = null;
-
 export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
 	const activeTextEditor = window.activeTextEditor;
 	if (
@@ -28,7 +27,6 @@ export function OnDidChangeDiagnostics(e: DiagnosticChangeEvent): void {
 		}
 	}
 }
-
 function getRandomCooldownDuration(): number {
   const minDuration = workspace
     .getConfiguration("hotheadedVSCode")
@@ -42,12 +40,10 @@ function getRandomCooldownDuration(): number {
   );
   return randomDuration;
 }
-
 function errorsForFile(editor: TextEditor, fileUri: Uri): Array<Diagnostic> {
 	return languages
 		.getDiagnostics(fileUri)
 		.filter(d => d.severity === DiagnosticSeverity.Error && isErrorCurrent(editor, d));
-
 }
 
 function textBetween(document: TextDocument, cursor: Position, error: Range): string {

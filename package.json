@@ -35,15 +35,15 @@
 					"markdownDescription": "A glob targeting some uncompressed sounds files (`.wav` etc.). Leave blank for built-in voice lines.  \nRestart required."
 				},
 				"hotheadedVSCode.cooldownDurationMin": {
-          "type": "number",
-          "default": 0,
-          "description": "Minimum cooldown duration in milliseconds."
-        },
-        "hotheadedVSCode.cooldownDurationMax": {
-          "type": "number",
-          "default": 0,
-          "description": "Maximum cooldown duration in milliseconds."
-        }
+					"type": "number",
+					"default": 0,
+					"description": "Minimum cooldown duration in milliseconds."
+				},
+				"hotheadedVSCode.cooldownDurationMax": {
+					"type": "number",
+					"default": 0,
+					"description": "Maximum cooldown duration in milliseconds."
+				}
 			}
 		}
 	},
